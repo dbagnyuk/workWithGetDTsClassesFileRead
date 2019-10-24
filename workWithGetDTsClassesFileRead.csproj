@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9797D363-1DB0-457D-ABF8-9964131F5C09}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>workWithGetDTsClassesFileRead</RootNamespace>
+    <AssemblyName>workWithGetDTsClassesFileRead</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ISca\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="PAid.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Srv.cs" />
+    <Compile Include="TDid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Connected Services\ISca\Object.wsdl" />
+    <None Include="Connected Services\ISca\SCA.wsdl" />
+    <None Include="Connected Services\ISca\SCA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\SCA7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CopyNotifTemplateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateBalanceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifAnnouncementOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifDeliveryRuleOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotificationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifMessageOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifMessagePatternOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifRuleConditionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifRulePatternOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateNotifTurnOffRuleOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreatePaServiceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateServiceNumberParamsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.CreateTdServiceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.DeleteNotifMessagePatternOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.DeletePaServiceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.DeleteTdServiceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetActivitiesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetActivityActionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetActivityGroupsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBalancesAndReservationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBalanceTemplatesListOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBalanceTemplatesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBlackListOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBlackListTdOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetBsReservationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetCcReservationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetCrmRecalcFactorsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetCugsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetDiaSySessionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetFaCodesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetFATimeIntervalsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetFFNumbersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetGprsStartDataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetLanguagesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifAnnouncementsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifConfigOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifDeliveryRulesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotificationCausesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotificationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifMessagePatternsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifMessagesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifParamOperatorsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifRdCounterCodesForTPOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifRdCounterThresholdsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifRuleConditionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifRulePatternOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetNotifTurnOffRulesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetPaAdminBlocksOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetPAAttributesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetPAsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetPAWithBalanceAndTDsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetProviderGroupsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetProvidersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetRdTariffPlansOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetServiceNumbersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetServiceNumbersParamsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetServicesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetShortNumbersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetTariffPlansOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetTDAttributesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetTdsCugsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetTDsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetTimeShiftOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetVlrsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetWhiteListOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.GetWhiteListTdOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.PrepareMessageOutputData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.RecalculateBalanceProfileOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.SyncBalanceTemplateDetailOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.SyncBalanceTemplateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.UpdateBalanceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.UpdateNotifTurnOffRuleOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ISca\workWithGetDTsClassesFileRead.ISca.UpdateServiceNumberOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ISca\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ISca\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ISca\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ISca\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
