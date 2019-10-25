@@ -27,7 +27,7 @@ namespace workWithGetDTsClassesFileRead
             bool writeConsole = true;
 
             string pathToFileIn = @"c:\in.txt";
-            string pathToFileOut = @"c:\out.txt";
+            string pathToFileOut = null;
             FileStream fileStreamIn = null;
             FileStream fileStreamOut = null;
             StreamReader streamReaderIn = null;
@@ -39,15 +39,11 @@ namespace workWithGetDTsClassesFileRead
 
             for (int i = 0; i < args.Length; i++)
             {
-                if (i == 0 && args[i].Contains(":\\") && args[i].Contains(".txt"))
-                    pathToFileIn = args[i];
-                if (i == 1 && args[i].Contains(":\\") && args[i].Contains(".txt"))
-                    pathToFileOut = args[i];
-
-                if (!string.Equals(args[i].ToLower(), "asc") && !string.Equals(args[i].ToLower(), "desc")
-                    && !string.Equals(args[i].ToLower(), "/f") && !string.Equals(args[i].ToLower(), "/c")
+                if (!string.Equals(args[i].ToLower(), "/c")
                     && !string.Equals(args[i].ToLower(), "/st") && !string.Equals(args[i].ToLower(), "/ss")
-                    && !args[i].Contains(":\\") && !args[i].Contains(".txt"))
+                    && !string.Equals(args[i].ToLower(), "asc") && !string.Equals(args[i].ToLower(), "desc")
+                    && !string.Equals(args[i].ToLower(), "/fi") && !string.Equals(args[i].ToLower(), "/fo")
+                    && !args[i].Contains(":\\"))
                 {
                     foreach (char c in args[i])
                         if (!char.IsLetterOrDigit(c))
@@ -80,21 +76,33 @@ namespace workWithGetDTsClassesFileRead
                     sortIdx = true;
                 }
 
-                if (args[i] == "/c")
-                    writeConsole = false;
+                if (string.Equals(args[i].ToLower(), "/fi"))
+                    pathToFileIn = @"c:\in.txt";
 
-                if (args[i] == "/f")
+                if (i > 0 && string.Equals(args[i - 1].ToLower(), "/fi") && args[i].Contains(":\\"))
+                    pathToFileIn = Convert.ToString(args[i].ToLower());
+
+                if (string.Equals(args[i].ToLower(), "/fo"))
+                {
+                    pathToFileOut = @"c:\out.txt";
                     writeFile = true;
+                }
+
+                if (i > 0 && string.Equals(args[i - 1].ToLower(), "/fo") && args[i].Contains(":\\"))
+                {
+                    pathToFileOut = Convert.ToString(args[i].ToLower());
+                    writeFile = true;
+                }
+
+                if (string.Equals(args[i].ToLower(), "/c"))
+                    writeConsole = false;
             }
             Console.Clear();
 
             try
             {
-                if (File.Exists(pathToFileIn))
-                {
-                    fileStreamIn = new FileStream(pathToFileIn, FileMode.Open);
-                    streamReaderIn = new StreamReader(fileStreamIn);
-                }
+                fileStreamIn = new FileStream(pathToFileIn, FileMode.Open);
+                streamReaderIn = new StreamReader(fileStreamIn);
             }
             catch (Exception ex)
             {
@@ -194,24 +202,24 @@ namespace workWithGetDTsClassesFileRead
         static void writeAppHelp()
         {
             Console.WriteLine("\nUsage:");
-            Console.WriteLine("\tworkWithGetDTsClassesFile.exe [PATH in] [PATH out] [Srv] [/f] [/c] " +
+            Console.WriteLine("\tworkWithGetDTsClassesFile.exe [Srv] [/fi {Path}] [/fo {Path}] [/c] " +
                             "\n\t\t\t\t      [/st {asc|desc}] [/ss {asc|desc}]");
-            Console.WriteLine("\nOptional:");
-            Console.WriteLine("\tPATH in  - path and name to file fith PAs for process," +
-                            "\n\t           the file must contain one PA per line" +
-                            "\n\t           and must have extensions *.txt." +
-                            "\n\t           (by deafault will be used \"c:\\in.txt\"");
-            Console.WriteLine("\tPATH Out - path and name to file in which result will be save," +
-                            "\n\t           (by deafault will be used \"c:\\out.txt\")");
-            Console.WriteLine("\tSrv      - Service code which you looking for" +
-                            "\n\t           (must not contain special symbols).");
-            Console.WriteLine("\t/st      - {asc|desc} sorting for Terminal Devices (default {asc}).");
-            Console.WriteLine("\t/ss      - {asc|desc} sorting for Service codes (default {asc}).");
-            Console.WriteLine("\t/c       - decline write ouput to console.");
-            Console.WriteLine("\t/f       - for write output into file.");
-            Console.WriteLine("\n\t/?       - for this help.");
+            Console.WriteLine("\nOptions:");
+            Console.WriteLine("\tSrv  - Service code which you looking for" +
+                            "\n\t       (must not contain special symbols).");
+            Console.WriteLine("\t/fi  - {Path} path and name to file fith PAs for process" +
+                            "\n\t       the file must contain one PA per line" +
+                            "\n\t       (by deafault will be used \"c:\\in.txt\").");
+            Console.WriteLine("\t/fo  - {Path} path and name to file in which result will be save" +
+                            "\n\t       (by deafault will be used \"c:\\out.txt\").");
+            Console.WriteLine("\t/st  - {asc|desc} sorting for Terminal Devices" +
+                            "\n\t       (default \"asc\").");
+            Console.WriteLine("\t/ss  - {asc|desc} sorting for Service codes" +
+                            "\n\t       (default \"asc\").");
+            Console.WriteLine("\t/c   - decline write ouput to console.");
+            Console.WriteLine("\n\t/?    - for this help.");
             Console.WriteLine("\nExample:");
-            Console.WriteLine("\tworkWithGetDTsClassesFileRead.exe c:\\in.txt c:\\out.txt TEST666 /f /st desc /ss desc");
+            Console.WriteLine("\tworkWithGetDTsClassesFileRead.exe TEST666 /fi c:\\in.txt /fo c:\\out.txt /st desc /ss desc");
             System.Environment.Exit(0);
         }
     }
