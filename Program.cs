@@ -183,6 +183,7 @@ namespace workWithGetDTsClassesFileRead
             {
                 streamWriterOut.Close();
                 fileStreamOut.Close();
+                fileReadPath(pathToFileIn);
                 fileWritePath(pathToFileOut);
             }
 
@@ -194,6 +195,10 @@ namespace workWithGetDTsClassesFileRead
         {
             Console.WriteLine("\nWrong input, please use 'tworkWithGetDTsClassesFile.exe /?' for help.");
             System.Environment.Exit(1);
+        }
+        static void fileReadPath(string fp)
+        {
+            Console.WriteLine($"\nInput from \"{fp}\"");
         }
         static void fileWritePath(string fp)
         {
