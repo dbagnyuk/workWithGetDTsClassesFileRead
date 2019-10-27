@@ -117,27 +117,6 @@ namespace workWithGetDTsClassesFileRead
             streamReaderIn.Close();
             fileStreamIn.Close();
 
-            if (writeFile)
-            {
-                try
-                {
-                    if (File.Exists(pathToFileOut))
-                        fileStreamOut = new FileStream(pathToFileOut, FileMode.Truncate);
-                    else
-                        fileStreamOut = new FileStream(pathToFileOut, FileMode.CreateNew);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    writeFile = false;
-                    if (!writeConsole)
-                        System.Environment.Exit(1);
-                }
-
-                if (writeFile)
-                    streamWriterOut = new StreamWriter(fileStreamOut);
-            }
-
             foreach (long inputedPA in inputedPAsList)
             {
                 Console.Write(".");
@@ -158,6 +137,27 @@ namespace workWithGetDTsClassesFileRead
                 inputedPAsObjList.Add(searchedPA);
             }
             Console.Clear();
+
+            if (writeFile)
+            {
+                try
+                {
+                    if (File.Exists(pathToFileOut))
+                        fileStreamOut = new FileStream(pathToFileOut, FileMode.Truncate);
+                    else
+                        fileStreamOut = new FileStream(pathToFileOut, FileMode.CreateNew);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    writeFile = false;
+                    if (!writeConsole)
+                        System.Environment.Exit(1);
+                }
+
+                if (writeFile)
+                    streamWriterOut = new StreamWriter(fileStreamOut);
+            }
 
             foreach (PAid searchedPA in inputedPAsObjList)
             {
