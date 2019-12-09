@@ -1,5 +1,5 @@
 # workWithGetDTsClassesFileRead
-
+```
 Usage:
         workWithGetDTsClassesFile.exe [Srv] [/fi {Path}] [/fo {Path}] [/c]
                                       [/st {asc|desc}] [/ss {asc|desc}]
@@ -22,3 +22,4 @@ Options:
 
 Example:
         workWithGetDTsClassesFileRead.exe TEST666 /fi c:\in.txt /fo c:\out.txt /st desc /ss desc
+```
